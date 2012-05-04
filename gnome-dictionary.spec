@@ -8,7 +8,7 @@
 Name:		gnome-dictionary
 Epoch:		1
 Version:	3.4.0
-Release:	%mkrel 1
+Release:	1
 Summary:	GNOME Dictionary
 License:	GPLv2+ and LGPLv2
 Group:		Graphical desktop/GNOME
@@ -51,14 +51,9 @@ This is the shared library required by the GNOME Dictionary.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 %find_lang %{name} --with-gnome
-
-for omf in %{buildroot}%{_datadir}/omf/*/*-*-??*.omf;do 
-echo "%lang($(basename $omf|sed -e s/.*-// -e s/.omf//)) $(echo $omf|sed -e s!%{buildroot}!!)" >> %{name}.lang
-done
 
 #we don't want these
 find %{buildroot} -name "*.la" -delete
@@ -71,8 +66,6 @@ find %{buildroot} -name "*.la" -delete
 %{_datadir}/glib-2.0/schemas/org.gnome.dictionary.gschema.xml
 %{_datadir}/applications/%{name}.desktop
 %{_mandir}/man1/%{name}.1.*
-%dir %{_datadir}/omf/%{name}/
-%{_datadir}/omf/%{name}/%{name}-C.omf
 
 %files -n %{libname}
 %{_libdir}/libgdict-%{api}.so.%{major}*
@@ -82,5 +75,4 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/libgdict-%{api}.so
 %{_libdir}/pkgconfig/gdict-%{api}.pc
 %{_includedir}/gdict-%{api}
-
 
