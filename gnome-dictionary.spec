@@ -76,3 +76,20 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/pkgconfig/gdict-%{api}.pc
 %{_includedir}/gdict-%{api}
 
+
+
+%changelog
+* Fri May 04 2012 Matthew Dawkins <mattydaw@mandriva.org> 1:3.4.0-1
++ Revision: 796153
+- imported package gnome-dictionary
+
+
+
+* Mon Mar 26 2012 ovitters <ovitters> 1:3.4.0-1.mga2
++ Revision: 226574
+- new version 3.4.0
+
+* Sat Oct 29 2011 wally <wally> 1:3.3.2-1.mga2
++ Revision: 159568
+- imported package gnome-dictionary
+
