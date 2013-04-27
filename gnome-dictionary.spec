@@ -1,15 +1,15 @@
+%define url_ver	%(echo %{version}|cut -d. -f1,2)
+
 %define major	6
 %define api	1.0
 %define libname	%mklibname gdict %{api} %{major}
 %define devname	%mklibname -d gdict %{api}
 
-%define url_ver	%(echo %{version}|cut -d. -f1,2)
-
+Summary:	GNOME Dictionary
 Name:		gnome-dictionary
 Epoch:		1
 Version:	3.4.0
 Release:	1
-Summary:	GNOME Dictionary
 License:	GPLv2+ and LGPLv2
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org
@@ -44,7 +44,6 @@ This is the shared library required by the GNOME Dictionary.
 
 %build
 %configure2_5x \
-	--disable-rpath \
 	--disable-static \
 	--disable-schemas-compile \
 	--disable-scrollkeeper
@@ -54,9 +53,6 @@ This is the shared library required by the GNOME Dictionary.
 %makeinstall_std
 
 %find_lang %{name} --with-gnome
-
-#we don't want these
-find %{buildroot} -name "*.la" -delete
 
 %files -f %{name}.lang
 %doc README NEWS AUTHORS TODO
@@ -75,21 +71,4 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/libgdict-%{api}.so
 %{_libdir}/pkgconfig/gdict-%{api}.pc
 %{_includedir}/gdict-%{api}
-
-
-
-%changelog
-* Fri May 04 2012 Matthew Dawkins <mattydaw@mandriva.org> 1:3.4.0-1
-+ Revision: 796153
-- imported package gnome-dictionary
-
-
-
-* Mon Mar 26 2012 ovitters <ovitters> 1:3.4.0-1.mga2
-+ Revision: 226574
-- new version 3.4.0
-
-* Sat Oct 29 2011 wally <wally> 1:3.3.2-1.mga2
-+ Revision: 159568
-- imported package gnome-dictionary
 
