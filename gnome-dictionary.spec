@@ -1,7 +1,7 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
-%define major	6
 %define api	1.0
+%define major	6
 %define libname	%mklibname gdict %{api} %{major}
 %define devname	%mklibname -d gdict %{api}
 
@@ -34,8 +34,8 @@ This is the shared library required by the GNOME Dictionary.
 %package -n %{devname}
 Group:		Development/C
 Summary:	GNOME dictionary library development files
-Requires:	%{libname} = %{epoch}:%{version}-%{release}
-Provides:	libgdict%{api}-devel = %{epoch}:%{version}-%{release}
+Requires:	%{libname} = %{EVRD}
+Provides:	libgdict%{api}-devel = %{EVRD}
 
 %description -n %{devname}
 This is the shared library required by the GNOME Dictionary.
