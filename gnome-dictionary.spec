@@ -8,8 +8,8 @@
 Summary:	GNOME Dictionary
 Name:		gnome-dictionary
 Epoch:		1
-Version:	3.6.0
-Release:	7
+Version:	3.14.1
+Release:	1
 License:	GPLv2+ and LGPLv2
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org
@@ -44,10 +44,8 @@ This is the shared library required by the GNOME Dictionary.
 %setup -q
 
 %build
-%configure2_5x \
-	--disable-static \
-	--disable-schemas-compile \
-	--disable-scrollkeeper
+%configure \
+	--disable-schemas-compile
 %make
 
 %install
@@ -62,6 +60,7 @@ This is the shared library required by the GNOME Dictionary.
 %{_datadir}/gdict-%{api}/
 %{_datadir}/glib-2.0/schemas/org.gnome.dictionary.gschema.xml
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/appdata/gnome-dictionary.appdata.xml
 %{_mandir}/man1/%{name}.1.*
 
 %files -n %{libname}

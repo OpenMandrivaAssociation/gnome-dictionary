@@ -1,2 +1,4 @@
+removed_sources:
+  gnome-dictionary-3.4.0.tar.xz: 4ac5035cf3edbd636ac65dc33f831c8276d4f054
 sources:
-  "gnome-dictionary-3.4.0.tar.xz": 4ac5035cf3edbd636ac65dc33f831c8276d4f054
+  gnome-dictionary-3.14.1.tar.xz: 532aa580f71821c137498cf9f2da84c3fbb4b3e9
