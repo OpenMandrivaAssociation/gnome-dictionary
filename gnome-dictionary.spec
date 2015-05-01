@@ -1,14 +1,14 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 %define api	1.0
-%define major	6
+%define major	8
 %define libname	%mklibname gdict %{api} %{major}
 %define devname	%mklibname -d gdict %{api}
 
 Summary:	GNOME Dictionary
 Name:		gnome-dictionary
 Epoch:		1
-Version:	 3.17.1
+Version:	3.17.1
 Release:	2
 License:	GPLv2+ and LGPLv2
 Group:		Graphical desktop/GNOME
@@ -56,11 +56,11 @@ This is the shared library required by the GNOME Dictionary.
 %files -f %{name}.lang
 %doc README NEWS AUTHORS TODO
 %{_bindir}/%{name}
-%{_datadir}/%{name}/
 %{_datadir}/gdict-%{api}/
 %{_datadir}/glib-2.0/schemas/org.gnome.dictionary.gschema.xml
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/appdata/gnome-dictionary.appdata.xml
+%{_datadir}/applications/org.gnome.Dictionary.desktop
+%{_datadir}/appdata/org.gnome.Dictionary.appdata.xml
+%{_datadir}/dbus-1/services/org.gnome.Dictionary.service
 %{_mandir}/man1/%{name}.1.*
 
 %files -n %{libname}
