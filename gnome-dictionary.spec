@@ -13,7 +13,7 @@ Release:	2
 License:	GPLv2+ and LGPLv2
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-dictionary/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-dictionary/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	pkgconfig(gnome-doc-utils)
