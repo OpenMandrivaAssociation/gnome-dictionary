@@ -1,15 +1,16 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
+%define _disable_rebuild_configure 1
 
 %define api	1.0
-%define major	8
+%define major	9
 %define libname	%mklibname gdict %{api} %{major}
 %define devname	%mklibname -d gdict %{api}
 
 Summary:	GNOME Dictionary
 Name:		gnome-dictionary
 Epoch:		1
-Version:	3.17.1
-Release:	4
+Version:	3.18.0
+Release:	1
 License:	GPLv2+ and LGPLv2
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org
