@@ -69,8 +69,8 @@ This is the shared library required by the GNOME Dictionary.
 #{_libdir}/libgdict-%{api}.so.%{major}*
 
 %files -n %{devname}
-%doc %{_datadir}/gtk-doc/html/gdict/
-%{_libdir}/libgdict-%{api}.so
-%{_libdir}/pkgconfig/gdict-%{api}.pc
-%{_includedir}/gdict-%{api}
+#doc #{_datadir}/gtk-doc/html/gdict/
+#{_libdir}/libgdict-%{api}.so
+#{_libdir}/pkgconfig/gdict-%{api}.pc
+#{_includedir}/gdict-%{api}
 
