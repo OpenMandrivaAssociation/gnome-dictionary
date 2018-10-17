@@ -2,7 +2,7 @@
 %define _disable_rebuild_configure 1
 
 %define api	1.0
-%define major	9
+%define major	10
 %define libname	%mklibname gdict %{api} %{major}
 %define devname	%mklibname -d gdict %{api}
 
@@ -56,7 +56,7 @@ This is the shared library required by the GNOME Dictionary.
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc NEWS
+%doc NEWS README.md
 %{_bindir}/%{name}
 %{_datadir}/gdict-%{api}/
 %{_datadir}/glib-2.0/schemas/org.gnome.dictionary.gschema.xml
