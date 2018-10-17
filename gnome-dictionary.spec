@@ -56,7 +56,7 @@ This is the shared library required by the GNOME Dictionary.
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc README NEWS AUTHORS TODO
+%doc NEWS
 %{_bindir}/%{name}
 %{_datadir}/gdict-%{api}/
 %{_datadir}/glib-2.0/schemas/org.gnome.dictionary.gschema.xml
