@@ -2,15 +2,14 @@
 %define _disable_rebuild_configure 1
 
 %define api	1.0
-%define major	9
+%define major	10
 %define libname	%mklibname gdict %{api} %{major}
 %define devname	%mklibname -d gdict %{api}
 
 Summary:	GNOME Dictionary
 Name:		gnome-dictionary
-Epoch:		1
-Version:	3.18.0
-Release:	2
+Version:	3.26.1
+Release:	1
 License:	GPLv2+ and LGPLv2
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org
@@ -20,6 +19,9 @@ BuildRequires:	itstool
 BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.28.0
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0.0
+BuildRequires:	meson
+BuildRequires:  docbook-xsl
+BuildRequires:	libxml2-utils
 Conflicts:	gnome-utils < 1:3.3.2
 
 %description
@@ -45,17 +47,16 @@ This is the shared library required by the GNOME Dictionary.
 %setup -q
 
 %build
-%configure \
-	--disable-schemas-compile
-%make
+%meson
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc README NEWS AUTHORS TODO
+%doc NEWS README.md
 %{_bindir}/%{name}
 %{_datadir}/gdict-%{api}/
 %{_datadir}/glib-2.0/schemas/org.gnome.dictionary.gschema.xml
@@ -65,11 +66,11 @@ This is the shared library required by the GNOME Dictionary.
 %{_mandir}/man1/%{name}.1.*
 
 %files -n %{libname}
-%{_libdir}/libgdict-%{api}.so.%{major}*
+#{_libdir}/libgdict-%{api}.so.%{major}*
 
 %files -n %{devname}
-%doc %{_datadir}/gtk-doc/html/gdict/
-%{_libdir}/libgdict-%{api}.so
-%{_libdir}/pkgconfig/gdict-%{api}.pc
-%{_includedir}/gdict-%{api}
+#doc #{_datadir}/gtk-doc/html/gdict/
+#{_libdir}/libgdict-%{api}.so
+#{_libdir}/pkgconfig/gdict-%{api}.pc
+#{_includedir}/gdict-%{api}
 
