@@ -20,6 +20,7 @@ BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.28.0
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0.0
 BuildRequires:	meson
+BuildRequires:  docbook-xsl
 BuildRequires:	libxml2-utils
 Conflicts:	gnome-utils < 1:3.3.2
 
