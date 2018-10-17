@@ -8,9 +8,8 @@
 
 Summary:	GNOME Dictionary
 Name:		gnome-dictionary
-Epoch:		1
-Version:	3.18.0
-Release:	2
+Version:	3.26.1
+Release:	1
 License:	GPLv2+ and LGPLv2
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org
@@ -20,6 +19,7 @@ BuildRequires:	itstool
 BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.28.0
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0.0
+BuildRequires:	meson
 Conflicts:	gnome-utils < 1:3.3.2
 
 %description
@@ -45,12 +45,11 @@ This is the shared library required by the GNOME Dictionary.
 %setup -q
 
 %build
-%configure \
-	--disable-schemas-compile
-%make
+%meson
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 
 %find_lang %{name} --with-gnome
 
