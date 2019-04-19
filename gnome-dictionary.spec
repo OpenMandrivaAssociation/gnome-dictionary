@@ -10,6 +10,7 @@ Summary:	GNOME Dictionary
 Name:		gnome-dictionary
 Version:	3.26.1
 Release:	2
+Epoch:    1
 License:	GPLv2+ and LGPLv2
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org
