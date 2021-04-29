@@ -62,7 +62,7 @@ This is the shared library required by the GNOME Dictionary.
 %{_datadir}/gdict-%{api}/
 %{_datadir}/glib-2.0/schemas/org.gnome.dictionary.gschema.xml
 %{_datadir}/applications/org.gnome.Dictionary.desktop
-%{_datadir}/appdata/org.gnome.Dictionary.appdata.xml
+#{_datadir}/appdata/org.gnome.Dictionary.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Dictionary.service
 %{_mandir}/man1/%{name}.1.*
 
