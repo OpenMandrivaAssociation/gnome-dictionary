@@ -15,6 +15,8 @@ License:	GPLv2+ and LGPLv2
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-dictionary/%{url_ver}/%{name}-%{version}.tar.xz
+# Upstream patch to fix build with meson 0.60+
+Patch0:   https://gitlab.gnome.org/GNOME/gnome-dictionary/-/commit/cf3f8a67cd6f3059c555ed9cf0f5fba10abb7f68.patch
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	pkgconfig(gnome-doc-utils)
@@ -45,7 +47,7 @@ Provides:	libgdict%{api}-devel = %{EVRD}
 This is the shared library required by the GNOME Dictionary.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %meson
