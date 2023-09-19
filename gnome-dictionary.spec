@@ -9,12 +9,12 @@
 Summary:	GNOME Dictionary
 Name:		gnome-dictionary
 Version: 40.0
-Release: 5
+Release: 6
 Epoch:   1
 License:	GPLv2+ and LGPLv2
 Group:		Graphical desktop/GNOME
-Url:		http://www.gnome.org
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-dictionary/%{url_ver}/%{name}-%{version}.tar.xz
+Url:		https://www.gnome.org
+Source0:	https://ftp.gnome.org/pub/GNOME/sources/gnome-dictionary/%{url_ver}/%{name}-%{version}.tar.xz
 # Upstream patch to fix build with meson 0.60+
 Patch0:   https://gitlab.gnome.org/GNOME/gnome-dictionary/-/commit/cf3f8a67cd6f3059c555ed9cf0f5fba10abb7f68.patch
 BuildRequires:	intltool
