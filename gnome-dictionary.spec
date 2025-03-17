@@ -9,7 +9,7 @@
 Summary:	GNOME Dictionary
 Name:		gnome-dictionary
 Version: 40.0
-Release: 8
+Release: 9
 Epoch:   1
 License:	GPLv2+ and LGPLv2
 Group:		Graphical desktop/GNOME
