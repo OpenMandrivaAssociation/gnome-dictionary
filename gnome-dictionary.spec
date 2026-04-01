@@ -9,7 +9,7 @@
 Summary:	GNOME Dictionary
 Name:		gnome-dictionary
 Version: 40.0
-Release: 10
+Release: 11
 Epoch:   1
 License:	GPLv2+ and LGPLv2
 Group:		Graphical desktop/GNOME
@@ -24,7 +24,7 @@ BuildRequires:	pkgconfig(glib-2.0) >= 2.28.0
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0.0
 BuildRequires:	meson
 BuildRequires:  docbook-xsl
-BuildRequires:	libxml2-utils
+BuildRequires:	libxml2-utils >= 2.15.2
 Conflicts:	gnome-utils < 1:3.3.2
 
 %description
